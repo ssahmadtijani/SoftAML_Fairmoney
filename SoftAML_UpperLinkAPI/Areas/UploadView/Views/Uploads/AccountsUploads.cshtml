@@ -1,0 +1,316 @@
+﻿@model IEnumerable<SoftAML_UpperLinkAPI.Models.account_information_uploads_model>
+@{
+    ViewBag.Title = "Account Information Uploads";
+    Layout = "~/Areas/UploadView/Views/Shared/_Layout.cshtml";
+}
+@section Style{
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.dataTables.min.css" />
+}
+
+<div class="page-content">
+
+    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <!-- BEGIN PAGE HEADER-->
+    <h3 class="page-title">
+        Account Information <small>Uploaded Account Information</small>
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="#">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Account Information</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Uploads</a>
+            </li>
+        </ul>
+        <div class="page-toolbar">
+            <div class="btn-group pull-right">
+                @*<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href="#">Action</a>
+                        </li>
+                        <li>
+                            <a href="#">Another action</a>
+                        </li>
+                        <li>
+                            <a href="#">Something else here</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">Separated link</a>
+                        </li>
+                    </ul>*@
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>Account Information
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+                        <a href="javascript:;" id="btnReload" class="reload">
+                        </a>
+                        @*<a href="javascript:;" class="remove">
+                        </a>*@
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-hover" id="tbl">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.batch_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.uploaded)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_branch)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.client_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_currency_code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_opened_date)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_closed_date)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_status_code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_beneficiary)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_balance)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_incorporation_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_business)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_phone_contact_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_phone_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_phone_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_address_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_address)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_city)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_state)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_country_code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.entity_email)
+                                    </th>
+
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+
+    </div>
+
+    <!-- END PAGE CONTENT-->
+</div>
+@section Scripts
+{
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnReload').click(function () {
+
+                refnos = [];
+                account.ajax.reload(null, false);
+                
+            });
+
+            var account = $("#tbl").DataTable({
+                "info": true,
+                'responsive': true,
+                'destroy': true,
+                "orderCellsTop": true,
+                "fixedHeader": true,
+                'autoWidth': false,
+                dom: 'Blfrtip',
+                sDom: 'Bfrtip',
+                // Design Assets
+                stateSave: true,
+                autoWidth: true,
+                // ServerSide Setups
+                processing: true,
+                serverSide: true,
+                // Paging Setups
+                paging: true,
+                // Searching Setups
+                searching: { regex: true },
+                // Ajax Filter
+                ajax: {
+                    url: "/api/Datatables/LoadAccountInformation",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("API_KEY", "21EE8DB6203A419C9B78A1F4EC765896");
+                    },
+                    type: "POST",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: function (d) {
+                        return JSON.stringify(d);
+                    }
+                },
+                // Columns Setups
+                columns: [
+                    { data: "batch_number" },
+                    {
+                        data: "uploaded",
+                        render: function (data, type, row) {
+                            // If display or filter data is requested, format the date
+                            if (type === "display" || type === "filter") {
+                                return moment(data).format("ddd DD/MM/YYYY HH:mm:ss");
+                            }
+                            // Otherwise the data type requested (`type`) is type detection or
+                            // sorting data, for which we want to use the raw date value, so just return
+                            // that, unaltered
+                            return data;
+                        }
+                    },
+                    { data: "account_number" },
+                    { data: "account_branch" },
+                    { data: "account_name" },
+                    { data: "client_number" },
+                    { data: "account_currency_code" },
+                    { data: "account_type" },
+                    {
+                        data: "account_opened_date",
+                        render: function (data, type, row) {
+                            // If display or filter data is requested, format the date
+                            if (type === "display" || type === "filter") {
+                                return moment(data).format("ddd DD/MM/YYYY HH:mm:ss");
+                            }
+                            // Otherwise the data type requested (`type`) is type detection or
+                            // sorting data, for which we want to use the raw date value, so just return
+                            // that, unaltered
+                            return data;
+                        }
+                    },
+                    {
+                        data: "account_closed_date",
+                        render: function (data, type, row) {
+                            // If display or filter data is requested, format the date
+                            if (type === "display" || type === "filter") {
+                                return moment(data).format("ddd DD/MM/YYYY HH:mm:ss");
+                            }
+                            // Otherwise the data type requested (`type`) is type detection or
+                            // sorting data, for which we want to use the raw date value, so just return
+                            // that, unaltered
+                            return data;
+                        }
+                    },
+                    { data: "account_status_code" },
+                    { data: "account_beneficiary" },
+                    { data: "account_balance" },
+                    { data: "entity_name" },
+                    { data: "entity_incorporation_number" },
+                    { data: "entity_business" },
+                    { data: "entity_phone_contact_type" },
+                    { data: "entity_phone_type" },
+                    { data: "entity_phone_number" },
+                    { data: "entity_address_type" },
+                    { data: "entity_address" },
+                    { data: "entity_city" },
+                    { data: "entity_state" },
+                    { data: "entity_country_code" },
+                    { data: "entity_email" }
+                ],
+                // Column Definitions
+                columnDefs: [
+                    { targets: "no-sort", orderable: false },
+                    { targets: "no-search", searchable: false },
+                    {
+                        targets: "trim",
+                        render: function (data, type, full, meta) {
+                            if (type === "display") {
+                                data = strtrunc(data, 10);
+                            }
+
+                            return data;
+                        }
+                    },
+                    { targets: "date-type", type: "date-eu" }
+                ]
+            });
+        });
+
+        function strtrunc(str, num) {
+            if (str.length > num) {
+                return str.slice(0, num) + "...";
+            }
+            else {
+                return str;
+            }
+        }
+    </script>
+}

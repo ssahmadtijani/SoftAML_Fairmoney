@@ -1,0 +1,292 @@
+﻿@model IEnumerable<SoftAML_UpperLinkAPI.Contexts.transaction_information_upload>
+
+@{
+    ViewBag.Title = "ViewOne";
+    Layout = "~/Areas/UploadView/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewOne</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.t_account_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_trans_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transaction_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_teller)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_authorized)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_late_deposit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_date_posting)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_value_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_transmode_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_amount_local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_client_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_funds_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_currency_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_foreign_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_exchange_rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_institution_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_institution_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_account_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_account_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_person_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_person_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_source_entity_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_client_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_funds_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_currency_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_foreign_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_exchange_rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_institution_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_institution_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_account_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_account_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_person_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_person_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.t_dest_entity_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tran_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uploader)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uploaded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.batch_number)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_account_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_trans_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transaction_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_teller)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_authorized)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_late_deposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_date_posting)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_value_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_transmode_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_amount_local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_client_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_funds_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_currency_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_foreign_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_exchange_rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_institution_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_institution_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_account_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_account_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_person_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_person_last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_source_entity_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_client_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_funds_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_currency_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_foreign_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_exchange_rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_institution_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_institution_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_account_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_account_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_person_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_person_last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.t_dest_entity_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tran_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uploader)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uploaded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.batch_number)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

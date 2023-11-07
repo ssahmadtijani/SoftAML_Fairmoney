@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WisdomApiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'WisdomApi.dbo.Ambassadors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ambassadors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="Porfolio" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'WisdomApi.dbo.PEP_Accounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PEP_Accounts">
+          <Property Name="ACCOUNT_NUMBER" Type="nvarchar" MaxLength="150" />
+          <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="150" />
+          <Property Name="BALANCE" Type="nvarchar" MaxLength="150" />
+          <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="150" />
+          <Property Name="CURRENCY_CODE" Type="nvarchar" MaxLength="150" />
+          <Property Name="BRANCH" Type="nvarchar" MaxLength="150" />
+          <Property Name="ACCOUNT_OFFICER" Type="nvarchar" MaxLength="150" />
+          <Property Name="MOBILENO" Type="nvarchar" MaxLength="150" />
+          <Property Name="DATE_OPENED" Type="nvarchar" MaxLength="150" />
+          <Property Name="POSITION_OF_PEP" Type="nvarchar" MaxLength="150" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="150" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="150" />
+          <Property Name="PROFESSION" Type="nvarchar" MaxLength="150" />
+        </EntityType>-->
+        <EntityType Name="PepList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UniqueIdentifier" Type="varchar" MaxLength="250" />
+          <Property Name="LastName" Type="varchar" MaxLength="250" />
+          <Property Name="FirstName" Type="varchar" MaxLength="250" />
+          <Property Name="OtherNames" Type="varchar" MaxLength="250" />
+          <Property Name="Titles" Type="varchar" MaxLength="250" />
+          <Property Name="AKA" Type="varchar" MaxLength="250" />
+          <Property Name="Sex" Type="varchar" MaxLength="250" />
+          <Property Name="Age" Type="varchar" MaxLength="250" />
+          <Property Name="PresentPosition" Type="varchar" MaxLength="250" />
+          <Property Name="PreviousPosition" Type="varchar" MaxLength="250" />
+          <Property Name="PePClassification" Type="varchar" MaxLength="250" />
+          <Property Name="OfficialAddress" Type="varchar" MaxLength="250" />
+          <Property Name="Profession" Type="varchar" MaxLength="250" />
+          <Property Name="ResidentialAddress" Type="varchar" MaxLength="250" />
+          <Property Name="StateofOrigin" Type="varchar" MaxLength="250" />
+          <Property Name="Spouse" Type="varchar" MaxLength="250" />
+          <Property Name="Children" Type="varchar" MaxLength="250" />
+          <Property Name="Sibling" Type="varchar" MaxLength="250" />
+          <Property Name="Parents" Type="varchar" MaxLength="100" />
+          <Property Name="MothersMaiden" Type="varchar" MaxLength="50" />
+          <Property Name="Associates" Type="varchar" MaxLength="250" />
+          <Property Name="BusinessInterest" Type="varchar" MaxLength="250" />
+          <Property Name="Bankers" Type="varchar" MaxLength="250" />
+          <Property Name="AccountDetails" Type="varchar" MaxLength="250" />
+          <Property Name="DateofBirth" Type="smalldatetime" />
+          <Property Name="PlaceofBirth" Type="varchar" MaxLength="50" />
+          <Property Name="PressReport" Type="varchar" MaxLength="50" />
+          <Property Name="DateofReport" Type="smalldatetime" />
+          <Property Name="AdditionalInformation" Type="varchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="MeansID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'WisdomApi.dbo.Sheet1' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Sheet1">
+          <Property Name="ACCOUNT_NUMBER" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACCOUNT_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="BALANCE" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACCOUNT_TYPE" Type="nvarchar" MaxLength="100" />
+          <Property Name="CURRENCY_CODE" Type="nvarchar" MaxLength="100" />
+          <Property Name="BRANCH" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACCOUNT_OFFICER" Type="nvarchar" MaxLength="100" />
+          <Property Name="MOBILENO" Type="nvarchar" MaxLength="100" />
+          <Property Name="DATE_OPENED" Type="nvarchar" MaxLength="100" />
+          <Property Name="POSITION_OF_PEP" Type="nvarchar" MaxLength="250" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="100" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="PROFESSION" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+        <EntityType Name="Watchlist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RecordID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Ind_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Ind_aka" Type="varchar" MaxLength="255" />
+          <Property Name="Ind_fka" Type="varchar" MaxLength="255" />
+          <Property Name="Ind_nka" Type="varchar" MaxLength="255" />
+          <Property Name="EntityName" Type="varchar" MaxLength="255" />
+          <Property Name="Addr" Type="varchar" MaxLength="255" />
+          <Property Name="Ves" Type="varchar" MaxLength="255" />
+          <Property Name="Air" Type="varchar" MaxLength="255" />
+          <Property Name="PlaceBirth" Type="varchar" MaxLength="255" />
+          <Property Name="DateBirth" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="255" />
+          <Property Name="StateProvince" Type="varchar" MaxLength="255" />
+          <Property Name="nationality" Type="varchar" MaxLength="255" />
+          <Property Name="CountryCode" Type="varchar" MaxLength="255" />
+          <Property Name="ExtLinks" Type="varchar" MaxLength="255" />
+          <Property Name="IDType" Type="varchar" MaxLength="255" />
+          <Property Name="Source" Type="varchar" MaxLength="255" />
+          <Property Name="Remarks" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Function Name="spPepList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="WisdomApiModelStoreContainer">
+          <EntitySet Name="PepList" EntityType="Self.PepList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Watchlist" EntityType="Self.Watchlist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ambassadors" EntityType="Self.Ambassadors" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ambassadors].[Id] AS [Id], 
+    [Ambassadors].[FirstName] AS [FirstName], 
+    [Ambassadors].[LastName] AS [LastName], 
+    [Ambassadors].[State] AS [State], 
+    [Ambassadors].[Porfolio] AS [Porfolio]
+    FROM [dbo].[Ambassadors] AS [Ambassadors]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WisdomApiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PepList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UniqueIdentifier" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OtherNames" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Titles" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AKA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PresentPosition" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PreviousPosition" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PePClassification" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="OfficialAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Profession" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ResidentialAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="StateofOrigin" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Spouse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Children" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sibling" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Parents" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MothersMaiden" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Associates" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessInterest" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Bankers" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AccountDetails" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+          <Property Name="PlaceofBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PressReport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateofReport" Type="DateTime" Precision="0" />
+          <Property Name="AdditionalInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MeansID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Watchlist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecordID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ind_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ind_aka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ind_fka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ind_nka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EntityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Addr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Ves" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Air" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PlaceBirth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateBirth" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StateProvince" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nationality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExtLinks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IDType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Ambassador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Porfolio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WisdomApiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PepLists" EntityType="Self.PepList" />
+          <EntitySet Name="Watchlists" EntityType="Self.Watchlist" />
+          <EntitySet Name="Ambassadors" EntityType="Self.Ambassador" />
+          <FunctionImport Name="spPepList" ReturnType="Collection(WisdomApiModel.spPepList_Result)" />
+        </EntityContainer>
+        <ComplexType Name="spPepList_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="UniqueIdentifier" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="OtherNames" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Titles" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="AKA" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Sex" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Age" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="PresentPosition" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="PreviousPosition" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="PePClassification" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="OfficialAddress" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Profession" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="ResidentialAddress" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="StateofOrigin" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Spouse" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Children" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Sibling" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Parents" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="MothersMaiden" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Associates" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="BusinessInterest" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Bankers" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="AccountDetails" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="DateofBirth" Nullable="true" Precision="16" />
+          <Property Type="String" Name="PlaceofBirth" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PressReport" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateofReport" Nullable="true" Precision="16" />
+          <Property Type="String" Name="AdditionalInformation" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MeansID" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WisdomApiModelStoreContainer" CdmEntityContainer="WisdomApiEntities">
+          <EntitySetMapping Name="PepLists">
+            <EntityTypeMapping TypeName="WisdomApiModel.PepList">
+              <MappingFragment StoreEntitySet="PepList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+                <ScalarProperty Name="Titles" ColumnName="Titles" />
+                <ScalarProperty Name="AKA" ColumnName="AKA" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="PresentPosition" ColumnName="PresentPosition" />
+                <ScalarProperty Name="PreviousPosition" ColumnName="PreviousPosition" />
+                <ScalarProperty Name="PePClassification" ColumnName="PePClassification" />
+                <ScalarProperty Name="OfficialAddress" ColumnName="OfficialAddress" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+                <ScalarProperty Name="StateofOrigin" ColumnName="StateofOrigin" />
+                <ScalarProperty Name="Spouse" ColumnName="Spouse" />
+                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="Sibling" ColumnName="Sibling" />
+                <ScalarProperty Name="Parents" ColumnName="Parents" />
+                <ScalarProperty Name="MothersMaiden" ColumnName="MothersMaiden" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="BusinessInterest" ColumnName="BusinessInterest" />
+                <ScalarProperty Name="Bankers" ColumnName="Bankers" />
+                <ScalarProperty Name="AccountDetails" ColumnName="AccountDetails" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
+                <ScalarProperty Name="PressReport" ColumnName="PressReport" />
+                <ScalarProperty Name="DateofReport" ColumnName="DateofReport" />
+                <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="MeansID" ColumnName="MeansID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Watchlists">
+            <EntityTypeMapping TypeName="WisdomApiModel.Watchlist">
+              <MappingFragment StoreEntitySet="Watchlist">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="Ind_Name" ColumnName="Ind_Name" />
+                <ScalarProperty Name="Ind_aka" ColumnName="Ind_aka" />
+                <ScalarProperty Name="Ind_fka" ColumnName="Ind_fka" />
+                <ScalarProperty Name="Ind_nka" ColumnName="Ind_nka" />
+                <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+                <ScalarProperty Name="Addr" ColumnName="Addr" />
+                <ScalarProperty Name="Ves" ColumnName="Ves" />
+                <ScalarProperty Name="Air" ColumnName="Air" />
+                <ScalarProperty Name="PlaceBirth" ColumnName="PlaceBirth" />
+                <ScalarProperty Name="DateBirth" ColumnName="DateBirth" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="ExtLinks" ColumnName="ExtLinks" />
+                <ScalarProperty Name="IDType" ColumnName="IDType" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ambassadors">
+            <EntityTypeMapping TypeName="WisdomApiModel.Ambassador">
+              <MappingFragment StoreEntitySet="Ambassadors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Porfolio" ColumnName="Porfolio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spPepList" FunctionName="WisdomApiModel.Store.spPepList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WisdomApiModel.spPepList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UniqueIdentifier" ColumnName="UniqueIdentifier" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+                <ScalarProperty Name="Titles" ColumnName="Titles" />
+                <ScalarProperty Name="AKA" ColumnName="AKA" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="PresentPosition" ColumnName="PresentPosition" />
+                <ScalarProperty Name="PreviousPosition" ColumnName="PreviousPosition" />
+                <ScalarProperty Name="PePClassification" ColumnName="PePClassification" />
+                <ScalarProperty Name="OfficialAddress" ColumnName="OfficialAddress" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+                <ScalarProperty Name="StateofOrigin" ColumnName="StateofOrigin" />
+                <ScalarProperty Name="Spouse" ColumnName="Spouse" />
+                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="Sibling" ColumnName="Sibling" />
+                <ScalarProperty Name="Parents" ColumnName="Parents" />
+                <ScalarProperty Name="MothersMaiden" ColumnName="MothersMaiden" />
+                <ScalarProperty Name="Associates" ColumnName="Associates" />
+                <ScalarProperty Name="BusinessInterest" ColumnName="BusinessInterest" />
+                <ScalarProperty Name="Bankers" ColumnName="Bankers" />
+                <ScalarProperty Name="AccountDetails" ColumnName="AccountDetails" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
+                <ScalarProperty Name="PressReport" ColumnName="PressReport" />
+                <ScalarProperty Name="DateofReport" ColumnName="DateofReport" />
+                <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="MeansID" ColumnName="MeansID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

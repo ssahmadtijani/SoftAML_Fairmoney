@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SoftAML_UpperlinkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_information_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="account_number" Type="varchar" MaxLength="50" />
+          <Property Name="account_branch" Type="varchar" MaxLength="50" />
+          <Property Name="account_name" Type="varchar(max)" />
+          <Property Name="client_number" Type="varchar" MaxLength="50" />
+          <Property Name="account_currency_code" Type="varchar(max)" />
+          <Property Name="account_type" Type="varchar(max)" />
+          <Property Name="account_opened_date" Type="date" />
+          <Property Name="account_closed_date" Type="varchar" MaxLength="50" />
+          <Property Name="account_status_code" Type="varchar" MaxLength="250" />
+          <Property Name="account_beneficiary" Type="varchar(max)" />
+          <Property Name="account_balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="entity_name" Type="varchar(max)" />
+          <Property Name="entity_incorporation_number" Type="varchar(max)" />
+          <Property Name="entity_business" Type="varchar" MaxLength="250" />
+          <Property Name="entity_phone_contact_type" Type="varchar" MaxLength="250" />
+          <Property Name="entity_phone_type" Type="varchar" MaxLength="250" />
+          <Property Name="entity_phone_number" Type="varchar" MaxLength="250" />
+          <Property Name="entity_address_type" Type="varchar" MaxLength="250" />
+          <Property Name="entity_address" Type="varchar" MaxLength="250" />
+          <Property Name="entity_city" Type="varchar" MaxLength="250" />
+          <Property Name="entity_state" Type="varchar" MaxLength="250" />
+          <Property Name="entity_country_code" Type="varchar" MaxLength="250" />
+          <Property Name="entity_email" Type="varchar" MaxLength="250" />
+          <Property Name="uploader" Type="nvarchar" MaxLength="256" />
+          <Property Name="uploaded" Type="datetime" />
+          <Property Name="batch_number" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="account_signatories_directors_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="account_number" Type="varchar" MaxLength="50" />
+          <Property Name="client_number" Type="varchar" MaxLength="50" />
+          <Property Name="person_type" Type="varchar" MaxLength="50" />
+          <Property Name="is_primary" Type="varchar" MaxLength="250" />
+          <Property Name="person_title" Type="varchar" MaxLength="50" />
+          <Property Name="person_first_name" Type="varchar" MaxLength="250" />
+          <Property Name="person_last_name" Type="varchar" MaxLength="250" />
+          <Property Name="person_gender" Type="varchar" MaxLength="250" />
+          <Property Name="person_birth_date" Type="date" />
+          <Property Name="person_passport_number" Type="varchar" MaxLength="250" />
+          <Property Name="person_passport_country" Type="varchar" MaxLength="250" />
+          <Property Name="person_id_type" Type="varchar" MaxLength="250" />
+          <Property Name="person_id_number" Type="varchar" MaxLength="250" />
+          <Property Name="person_issue_country" Type="varchar" MaxLength="250" />
+          <Property Name="person_nationality" Type="varchar" MaxLength="250" />
+          <Property Name="person_tph_contact_type" Type="varchar" MaxLength="250" />
+          <Property Name="person_tph_comm_type" Type="varchar" MaxLength="250" />
+          <Property Name="person_phone_number" Type="varchar" MaxLength="250" />
+          <Property Name="person_address_type" Type="varchar" MaxLength="250" />
+          <Property Name="person_address" Type="varchar" MaxLength="250" />
+          <Property Name="person_city" Type="varchar" MaxLength="250" />
+          <Property Name="person_state" Type="varchar" MaxLength="250" />
+          <Property Name="person_country_code" Type="varchar" MaxLength="250" />
+          <Property Name="person_email" Type="varchar" MaxLength="250" />
+          <Property Name="person_occupation" Type="varchar" MaxLength="250" />
+          <Property Name="person_tax_number" Type="varchar" MaxLength="250" />
+          <Property Name="uploader" Type="nvarchar" MaxLength="256" />
+          <Property Name="uploaded" Type="datetime" />
+          <Property Name="batch_number" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblAPIKeys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="apiKey" Type="nvarchar" MaxLength="520" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="transaction_information_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="t_account_number" Type="varchar" MaxLength="250" />
+          <Property Name="t_trans_number" Type="varchar" MaxLength="250" />
+          <Property Name="t_location" Type="varchar" MaxLength="250" />
+          <Property Name="transaction_description" Type="varchar" MaxLength="1000" />
+          <Property Name="t_date" Type="date" />
+          <Property Name="t_teller" Type="varchar" MaxLength="250" />
+          <Property Name="t_authorized" Type="varchar" MaxLength="250" />
+          <Property Name="t_late_deposit" Type="varchar" MaxLength="250" />
+          <Property Name="t_date_posting" Type="date" />
+          <Property Name="t_value_date" Type="date" />
+          <Property Name="t_transmode_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_amount_local" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_client_type" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_type" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_funds_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_currency_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_foreign_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_exchange_rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_country" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_institution_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_institution_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_account_number" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_account_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_person_first_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_person_last_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_source_entity_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_client_type" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_type" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_funds_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_currency_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_foreign_amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="t_dest_exchange_rate" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="t_dest_country" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_institution_code" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_institution_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_account_number" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_account_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_person_first_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_person_last_name" Type="varchar" MaxLength="250" />
+          <Property Name="t_dest_entity_name" Type="varchar" MaxLength="250" />
+          <Property Name="Tran_Type" Type="varchar" MaxLength="250" />
+          <Property Name="uploader" Type="nvarchar" MaxLength="256" />
+          <Property Name="uploaded" Type="datetime" />
+          <Property Name="batch_number" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SoftAML_UpperlinkModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="account_information_upload" EntityType="Self.account_information_upload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="account_signatories_directors_upload" EntityType="Self.account_signatories_directors_upload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAPIKeys" EntityType="Self.tblAPIKeys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transaction_information_upload" EntityType="Self.transaction_information_upload" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoftAML_UpperlinkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="account_information_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="account_branch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="account_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="client_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="account_currency_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="account_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="account_opened_date" Type="DateTime" Precision="0" />
+          <Property Name="account_closed_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="account_status_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="account_beneficiary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="account_balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="entity_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="entity_incorporation_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="entity_business" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_phone_contact_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_phone_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_phone_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_address_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_city" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_state" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_country_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="entity_email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="uploader" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="uploaded" Type="DateTime" Precision="3" />
+          <Property Name="batch_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="account_signatories_directors_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="account_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="client_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="person_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_primary" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="person_first_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_last_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_gender" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_birth_date" Type="DateTime" Precision="0" />
+          <Property Name="person_passport_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_passport_country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_id_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_id_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_issue_country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_nationality" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_tph_contact_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_tph_comm_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_phone_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_address_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_city" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_state" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_country_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_occupation" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="person_tax_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="uploader" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="uploaded" Type="DateTime" Precision="3" />
+          <Property Name="batch_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="tblAPIKey">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="apiKey" Type="String" MaxLength="520" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="transaction_information_upload">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="t_account_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_trans_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_location" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="transaction_description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="t_date" Type="DateTime" Precision="0" />
+          <Property Name="t_teller" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_authorized" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_late_deposit" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_date_posting" Type="DateTime" Precision="0" />
+          <Property Name="t_value_date" Type="DateTime" Precision="0" />
+          <Property Name="t_transmode_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_amount_local" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_client_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_funds_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_currency_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_foreign_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_exchange_rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t_source_country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_institution_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_institution_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_account_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_account_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_person_first_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_person_last_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_source_entity_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_client_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_funds_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_currency_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_foreign_amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t_dest_exchange_rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="t_dest_country" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_institution_code" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_institution_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_account_number" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_account_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_person_first_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_person_last_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="t_dest_entity_name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Tran_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="uploader" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="uploaded" Type="DateTime" Precision="3" />
+          <Property Name="batch_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="account_information_upload" EntityType="Self.account_information_upload" />
+          <EntitySet Name="account_signatories_directors_upload" EntityType="Self.account_signatories_directors_upload" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <EntitySet Name="tblAPIKeys" EntityType="Self.tblAPIKey" />
+          <EntitySet Name="transaction_information_upload" EntityType="Self.transaction_information_upload" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoftAML_UpperlinkModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_information_upload">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.account_information_upload">
+              <MappingFragment StoreEntitySet="account_information_upload">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="account_number" ColumnName="account_number" />
+                <ScalarProperty Name="account_branch" ColumnName="account_branch" />
+                <ScalarProperty Name="account_name" ColumnName="account_name" />
+                <ScalarProperty Name="client_number" ColumnName="client_number" />
+                <ScalarProperty Name="account_currency_code" ColumnName="account_currency_code" />
+                <ScalarProperty Name="account_type" ColumnName="account_type" />
+                <ScalarProperty Name="account_opened_date" ColumnName="account_opened_date" />
+                <ScalarProperty Name="account_closed_date" ColumnName="account_closed_date" />
+                <ScalarProperty Name="account_status_code" ColumnName="account_status_code" />
+                <ScalarProperty Name="account_beneficiary" ColumnName="account_beneficiary" />
+                <ScalarProperty Name="account_balance" ColumnName="account_balance" />
+                <ScalarProperty Name="entity_name" ColumnName="entity_name" />
+                <ScalarProperty Name="entity_incorporation_number" ColumnName="entity_incorporation_number" />
+                <ScalarProperty Name="entity_business" ColumnName="entity_business" />
+                <ScalarProperty Name="entity_phone_contact_type" ColumnName="entity_phone_contact_type" />
+                <ScalarProperty Name="entity_phone_type" ColumnName="entity_phone_type" />
+                <ScalarProperty Name="entity_phone_number" ColumnName="entity_phone_number" />
+                <ScalarProperty Name="entity_address_type" ColumnName="entity_address_type" />
+                <ScalarProperty Name="entity_address" ColumnName="entity_address" />
+                <ScalarProperty Name="entity_city" ColumnName="entity_city" />
+                <ScalarProperty Name="entity_state" ColumnName="entity_state" />
+                <ScalarProperty Name="entity_country_code" ColumnName="entity_country_code" />
+                <ScalarProperty Name="entity_email" ColumnName="entity_email" />
+                <ScalarProperty Name="uploader" ColumnName="uploader" />
+                <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+                <ScalarProperty Name="batch_number" ColumnName="batch_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="account_signatories_directors_upload">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.account_signatories_directors_upload">
+              <MappingFragment StoreEntitySet="account_signatories_directors_upload">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="account_number" ColumnName="account_number" />
+                <ScalarProperty Name="client_number" ColumnName="client_number" />
+                <ScalarProperty Name="person_type" ColumnName="person_type" />
+                <ScalarProperty Name="is_primary" ColumnName="is_primary" />
+                <ScalarProperty Name="person_title" ColumnName="person_title" />
+                <ScalarProperty Name="person_first_name" ColumnName="person_first_name" />
+                <ScalarProperty Name="person_last_name" ColumnName="person_last_name" />
+                <ScalarProperty Name="person_gender" ColumnName="person_gender" />
+                <ScalarProperty Name="person_birth_date" ColumnName="person_birth_date" />
+                <ScalarProperty Name="person_passport_number" ColumnName="person_passport_number" />
+                <ScalarProperty Name="person_passport_country" ColumnName="person_passport_country" />
+                <ScalarProperty Name="person_id_type" ColumnName="person_id_type" />
+                <ScalarProperty Name="person_id_number" ColumnName="person_id_number" />
+                <ScalarProperty Name="person_issue_country" ColumnName="person_issue_country" />
+                <ScalarProperty Name="person_nationality" ColumnName="person_nationality" />
+                <ScalarProperty Name="person_tph_contact_type" ColumnName="person_tph_contact_type" />
+                <ScalarProperty Name="person_tph_comm_type" ColumnName="person_tph_comm_type" />
+                <ScalarProperty Name="person_phone_number" ColumnName="person_phone_number" />
+                <ScalarProperty Name="person_address_type" ColumnName="person_address_type" />
+                <ScalarProperty Name="person_address" ColumnName="person_address" />
+                <ScalarProperty Name="person_city" ColumnName="person_city" />
+                <ScalarProperty Name="person_state" ColumnName="person_state" />
+                <ScalarProperty Name="person_country_code" ColumnName="person_country_code" />
+                <ScalarProperty Name="person_email" ColumnName="person_email" />
+                <ScalarProperty Name="person_occupation" ColumnName="person_occupation" />
+                <ScalarProperty Name="person_tax_number" ColumnName="person_tax_number" />
+                <ScalarProperty Name="uploader" ColumnName="uploader" />
+                <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+                <ScalarProperty Name="batch_number" ColumnName="batch_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAPIKeys">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.tblAPIKey">
+              <MappingFragment StoreEntitySet="tblAPIKeys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="apiKey" ColumnName="apiKey" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transaction_information_upload">
+            <EntityTypeMapping TypeName="SoftAML_UpperlinkModel.transaction_information_upload">
+              <MappingFragment StoreEntitySet="transaction_information_upload">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="t_account_number" ColumnName="t_account_number" />
+                <ScalarProperty Name="t_trans_number" ColumnName="t_trans_number" />
+                <ScalarProperty Name="t_location" ColumnName="t_location" />
+                <ScalarProperty Name="transaction_description" ColumnName="transaction_description" />
+                <ScalarProperty Name="t_date" ColumnName="t_date" />
+                <ScalarProperty Name="t_teller" ColumnName="t_teller" />
+                <ScalarProperty Name="t_authorized" ColumnName="t_authorized" />
+                <ScalarProperty Name="t_late_deposit" ColumnName="t_late_deposit" />
+                <ScalarProperty Name="t_date_posting" ColumnName="t_date_posting" />
+                <ScalarProperty Name="t_value_date" ColumnName="t_value_date" />
+                <ScalarProperty Name="t_transmode_code" ColumnName="t_transmode_code" />
+                <ScalarProperty Name="t_amount_local" ColumnName="t_amount_local" />
+                <ScalarProperty Name="t_source_client_type" ColumnName="t_source_client_type" />
+                <ScalarProperty Name="t_source_type" ColumnName="t_source_type" />
+                <ScalarProperty Name="t_source_funds_code" ColumnName="t_source_funds_code" />
+                <ScalarProperty Name="t_source_currency_code" ColumnName="t_source_currency_code" />
+                <ScalarProperty Name="t_source_foreign_amount" ColumnName="t_source_foreign_amount" />
+                <ScalarProperty Name="t_source_exchange_rate" ColumnName="t_source_exchange_rate" />
+                <ScalarProperty Name="t_source_country" ColumnName="t_source_country" />
+                <ScalarProperty Name="t_source_institution_code" ColumnName="t_source_institution_code" />
+                <ScalarProperty Name="t_source_institution_name" ColumnName="t_source_institution_name" />
+                <ScalarProperty Name="t_source_account_number" ColumnName="t_source_account_number" />
+                <ScalarProperty Name="t_source_account_name" ColumnName="t_source_account_name" />
+                <ScalarProperty Name="t_source_person_first_name" ColumnName="t_source_person_first_name" />
+                <ScalarProperty Name="t_source_person_last_name" ColumnName="t_source_person_last_name" />
+                <ScalarProperty Name="t_source_entity_name" ColumnName="t_source_entity_name" />
+                <ScalarProperty Name="t_dest_client_type" ColumnName="t_dest_client_type" />
+                <ScalarProperty Name="t_dest_type" ColumnName="t_dest_type" />
+                <ScalarProperty Name="t_dest_funds_code" ColumnName="t_dest_funds_code" />
+                <ScalarProperty Name="t_dest_currency_code" ColumnName="t_dest_currency_code" />
+                <ScalarProperty Name="t_dest_foreign_amount" ColumnName="t_dest_foreign_amount" />
+                <ScalarProperty Name="t_dest_exchange_rate" ColumnName="t_dest_exchange_rate" />
+                <ScalarProperty Name="t_dest_country" ColumnName="t_dest_country" />
+                <ScalarProperty Name="t_dest_institution_code" ColumnName="t_dest_institution_code" />
+                <ScalarProperty Name="t_dest_institution_name" ColumnName="t_dest_institution_name" />
+                <ScalarProperty Name="t_dest_account_number" ColumnName="t_dest_account_number" />
+                <ScalarProperty Name="t_dest_account_name" ColumnName="t_dest_account_name" />
+                <ScalarProperty Name="t_dest_person_first_name" ColumnName="t_dest_person_first_name" />
+                <ScalarProperty Name="t_dest_person_last_name" ColumnName="t_dest_person_last_name" />
+                <ScalarProperty Name="t_dest_entity_name" ColumnName="t_dest_entity_name" />
+                <ScalarProperty Name="Tran_Type" ColumnName="Tran_Type" />
+                <ScalarProperty Name="uploader" ColumnName="uploader" />
+                <ScalarProperty Name="uploaded" ColumnName="uploaded" />
+                <ScalarProperty Name="batch_number" ColumnName="batch_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="SoftAML_UpperlinkModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

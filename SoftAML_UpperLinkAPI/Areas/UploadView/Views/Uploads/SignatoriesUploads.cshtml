@@ -1,0 +1,319 @@
+﻿@model IEnumerable<SoftAML_UpperLinkAPI.Contexts.account_signatories_directors_upload>
+@{
+    ViewBag.Title = "Signatory Information Uploads";
+    Layout = "~/Areas/UploadView/Views/Shared/_Layout.cshtml";
+}
+
+@section Style{
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.8/css/fixedHeader.dataTables.min.css" />
+}
+
+<div class="page-content">
+
+    <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <!-- BEGIN PAGE HEADER-->
+    <h3 class="page-title">
+        Signatory Information <small>Uploaded Signatories Information</small>
+    </h3>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="fa fa-home"></i>
+                <a href="#">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Signatories Information</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Uploads</a>
+            </li>
+        </ul>
+        <div class="page-toolbar">
+            <div class="btn-group pull-right">
+                @*<button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href="#">Action</a>
+                        </li>
+                        <li>
+                            <a href="#">Another action</a>
+                        </li>
+                        <li>
+                            <a href="#">Something else here</a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="#">Separated link</a>
+                        </li>
+                    </ul>*@
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN SAMPLE TABLE PORTLET-->
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-cogs"></i>Signatories Information
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+                        <a href="javascript:;" id="btnReload" class="reload">
+                        </a>
+                        @*<a href="javascript:;" class="remove">
+                            </a>*@
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-hover" id="tbl">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.batch_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.uploaded)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.account_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.client_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.is_primary)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_title)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_first_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_last_name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_gender)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_birth_date)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_passport_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_passport_country)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_id_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_id_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_issue_country)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_nationality)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_tph_contact_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_tph_comm_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_phone_number)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_address_type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_address)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_city)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_state)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_country_code)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_email)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_occupation)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.person_tax_number)
+                                    </th>
+                                   
+
+                                </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+
+    </div>
+
+    <!-- END PAGE CONTENT-->
+</div>
+@section Scripts
+{
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#btnReload').click(function () {
+
+                refnos = [];
+                signatories.ajax.reload(null, false);
+
+            });
+
+            var signatories = $("#tbl").DataTable({
+                "info": true,
+                'responsive': true,
+                'destroy': true,
+                "orderCellsTop": true,
+                "fixedHeader": true,
+                'autoWidth': false,
+                dom: 'Blfrtip',
+                sDom: 'Bfrtip',
+                // Design Assets
+                stateSave: true,
+                autoWidth: true,
+                // ServerSide Setups
+                processing: true,
+                serverSide: true,
+                // Paging Setups
+                paging: true,
+                // Searching Setups
+                searching: { regex: true },
+                // Ajax Filter
+                ajax: {
+                    url: "/api/Datatables/LoadAccountSignatoryInformation",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("API_KEY", "BD8E6266F7A847A7B7D8046AA3A64823");
+                    },
+                    type: "POST",
+                    contentType: "application/json",
+                    dataType: "json",
+                    data: function (d) {
+                        return JSON.stringify(d);
+                    }
+                },
+                // Columns Setups
+                columns: [
+                    { data: "batch_number" },
+                    {
+                        data: "uploaded",
+                        render: function (data, type, row) {
+                            // If display or filter data is requested, format the date
+                            if (type === "display" || type === "filter") {
+                                return moment(data).format("ddd DD/MM/YYYY HH:mm:ss");
+                            }
+                            // Otherwise the data type requested (`type`) is type detection or
+                            // sorting data, for which we want to use the raw date value, so just return
+                            // that, unaltered
+                            return data;
+                        }
+                    },
+                    { data: "account_number" },
+                    { data: "client_number" },
+                    { data: "person_type" },
+                    { data: "is_primary" },
+                    { data: "person_title" },
+                    { data: "person_first_name" },
+                    { data: "person_last_name" },
+                    { data: "person_gender" },
+                    {
+                        data: "person_birth_date",
+                        render: function (data, type, row) {
+                            // If display or filter data is requested, format the date
+                            if (type === "display" || type === "filter") {
+                                return moment(data).format("ddd DD/MM/YYYY HH:mm:ss");
+                            }
+                            // Otherwise the data type requested (`type`) is type detection or
+                            // sorting data, for which we want to use the raw date value, so just return
+                            // that, unaltered
+                            return data;
+                        }
+                    },
+                    { data: "person_passport_number" },
+                    { data: "person_passport_country" },
+                    { data: "person_id_type" },
+                    { data: "person_id_number" },
+                    { data: "person_issue_country" },
+                    { data: "person_nationality" },
+                    { data: "person_tph_contact_type" },
+                    { data: "person_tph_comm_type" },
+                    { data: "person_phone_number" },
+                    { data: "person_address_type" },
+                    { data: "person_address" },
+                    { data: "person_city" },
+                    { data: "person_state" },
+                    { data: "person_country_code" },
+                    { data: "person_email" },
+                    { data: "person_occupation" },
+                    { data: "person_tax_number" },
+                ],
+                // Column Definitions
+                columnDefs: [
+                    { targets: "no-sort", orderable: false },
+                    { targets: "no-search", searchable: false },
+                    {
+                        targets: "trim",
+                        render: function (data, type, full, meta) {
+                            if (type === "display") {
+                                data = strtrunc(data, 10);
+                            }
+
+                            return data;
+                        }
+                    },
+                    { targets: "date-type", type: "date-eu" }
+                ]
+            });
+        });
+
+        function strtrunc(str, num) {
+            if (str.length > num) {
+                return str.slice(0, num) + "...";
+            }
+            else {
+                return str;
+            }
+        }
+    </script>
+}
+
