@@ -55,9 +55,9 @@ namespace SoftAML_UpperLinkAPI.Contexts
         public string t_dest_person_first_name { get; set; }
         public string t_dest_person_last_name { get; set; }
         public string t_dest_entity_name { get; set; }
-        public string Tran_Type { get; set; }
         public string uploader { get; set; }
         public Nullable<System.DateTime> uploaded { get; set; }
         public string batch_number { get; set; }
+        public string tran_type { get; set; }
     }
 }

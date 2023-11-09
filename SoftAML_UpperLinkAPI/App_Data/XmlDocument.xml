@@ -486,6 +486,11 @@
             Soft AML Upload
             </summary>
         </member>
+        <member name="M:SoftAML_UpperLinkAPI.Controllers.SoftAMLController.#ctor">
+            <summary>
+            Controller Constructor
+            </summary>
+        </member>
         <member name="M:SoftAML_UpperLinkAPI.Controllers.SoftAMLController.PostTransaction(SoftAML_UpperLinkAPI.Models.transaction_information_uploads_model)">
             <summary>
             Post Transaction (Single)

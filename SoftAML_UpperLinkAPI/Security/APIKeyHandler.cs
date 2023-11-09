@@ -21,7 +21,16 @@ namespace SoftAML_UpperLinkAPI.Security
             if (checkApiKeyExists)
             {
                 string apiKeyClient = lsHeaders.FirstOrDefault();
-                isValidAPIKey = _db.tblAPIKeys.Count(s=>s.status.Value == true && s.apiKey.Equals(apiKeyClient))>0;
+                try
+                {
+                    isValidAPIKey = _db.tblAPIKeys.Count(s => s.status.Value == true && s.apiKey.Equals(apiKeyClient)) > 0;
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+                
                 
             }
             if (!isValidAPIKey)

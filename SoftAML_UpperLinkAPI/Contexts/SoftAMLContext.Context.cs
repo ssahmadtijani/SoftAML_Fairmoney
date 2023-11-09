@@ -34,5 +34,6 @@ namespace SoftAML_UpperLinkAPI.Contexts
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<tblAPIKey> tblAPIKeys { get; set; }
         public virtual DbSet<transaction_information_upload> transaction_information_upload { get; set; }
+        public virtual DbSet<tblAPILog> tblAPILogs { get; set; }
     }
 }

@@ -265,7 +265,7 @@ namespace SoftAML_UpperLinkAPI.Controllers
                                                r.t_dest_person_first_name != null && r.t_dest_person_first_name.ToString().ToUpper().Contains(searchBy.ToUpper()) ||
                                                r.t_dest_person_last_name != null && r.t_dest_person_last_name.ToString().ToUpper().Contains(searchBy.ToUpper()) ||
                                                r.t_dest_entity_name != null && r.t_dest_entity_name.ToString().ToUpper().Contains(searchBy.ToUpper()) ||
-                                               r.Tran_Type != null && r.Tran_Type.ToString().ToUpper().Contains(searchBy.ToUpper()) ||
+                                               r.tran_type != null && r.tran_type.ToString().ToUpper().Contains(searchBy.ToUpper()) ||
                                                r.uploaded != null && r.uploaded.ToString().ToUpper().Contains(searchBy.ToUpper())
 
                                                );
